@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.33, maximum-scale=0.33">
+    
+
+    <title>Car License Plate Detector</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    
+
+        .jumbotron {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        .jumbotron h1 {
+            color: rgb(57, 18, 156);
+            font-size: 10rem;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .form-group {
+            margin-top: 4rem;
+        }
+        .form-group label {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .form-control-file {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 0;
+            padding: 1rem;
+        }
+        .form-control-file:focus {
+            box-shadow: none;
+        }
+        .btn-primary {
+            font-size: 5rem;
+            font-weight: bold;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 0;
+            padding: 1rem 3rem;
+            margin-top: 3rem;
+        }
+        .btn-primary:hover {
+            background-color: #ffc107;
+        }
+        .alert-danger {
+            font-size: 3rem;
+            font-weight: bold;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 0;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+        .alert-danger a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">Car License Plate Detector</h1>
+            <form action="/" method="post" enctype="multipart/form-data" class="mt-5">
+                <div class="form-group">
+                    <label for="image">Upload an image of a car:</label>
+                    <input type="file" name="image" id="image" class="form-control-file" required>
+                </div>
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                        <a href="/" class="alert-link">Try Again</a>
+                    </div>
+                {% endif %}
+                <button type="submit" class="btn btn-primary">Detect License Plate</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

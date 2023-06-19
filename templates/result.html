@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.31, maximum-scale=0.33">
+    
+
+    <title>Car License Plate Detector - Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+        .jumbotron {
+            background-image: url('/static/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        .jumbotron h1 {
+            color: rgb(154, 16, 204);
+            font-size: 10rem;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .mt-5 {
+            margin-top: 5rem !important;
+        }
+        .text-center {
+            text-align: center !important;
+        }
+        .jumbotron h2 {
+            color: rgb(4, 46, 29);
+            font-size: 8rem;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .img-fluid {
+            width: 1000px;
+            height: 625px;
+        }
+        .btn-primary {
+            font-size: 5rem;
+            font-weight: bold;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 0;
+            padding: 1rem 3rem;
+            margin-top: 3rem;
+        }
+        .btn-primary:hover {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">Car License Plate Detector</h1>
+            <h2 class="text-center mt-5">License Plate: {{ license_plate }}</h2>
+            <div class="text-center mt-5">
+                <img src="/static/license_plate.jpg" alt="License Plate" class="img-fluid">
+            </div>
+            <div class="text-center mt-5">
+                <a href="/" class="btn btn-primary">Try Another Image</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
